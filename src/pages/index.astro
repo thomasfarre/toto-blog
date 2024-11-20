@@ -1,13 +1,30 @@
 ---
-import Layout from '../layout/Layout.astro';
-import { Heading } from '../component/foundations/Heading.jsx';
+import Layout from "../layout/Layout.astro";
+import { Heading } from "../component/foundations/Heading.jsx";
+import { Button } from "../component/foundations/Button.jsx";
+import { BodyText } from "../component/foundations/BodyText.jsx";
 ---
 
 <Layout
-  title="Your Page Title"
-  description="A detailed description of your page content"
-  keywords="relevant, keywords, for, this, page"
+  title="Thomas Farre - Développeur Front-End"
+  description="Développeur web front-end passionné par la création d'interfaces utilisateur intuitives et esthétiques, spécialisé en React, Vue et TailwindCSS"
+  keywords="développeur front-end, web design, interfaces utilisateur, React, Vue, TailwindCSS, Storybook, design minimaliste"
   image="/path-to-og-image.jpg"
 >
-  <Heading level={1}>Astro</Heading>
+  <header class="max-w-7xl py-40 mx-auto">
+    <div class="max-w-3xl space-y-8">
+      <Heading level={1}>
+        Front-End Developer, Minimalist Designer, and Problem Solver.
+      </Heading>
+
+      <BodyText variant="paragraph">
+        Je suis Thomas Farre, un développeur web front-end, passionné par la
+        création d'interfaces utilisateur intuitives et esthétiques. Avec une
+        approche axée sur le design rationnel et minimaliste, j'exploite des
+        outils modernes comme TailwindCSS, React, Vue et Storybook pour
+        construire des expériences web engageantes et performantes. Explorons
+        comment nous pouvons collaborer pour réaliser vos projets ambitieux !
+      </BodyText>
+    </div>
+  </header>
 </Layout>
