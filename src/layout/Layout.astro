@@ -1,0 +1,66 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  keywords?: string;
+}
+
+const {
+  title = "Astro",
+  description = "Your default site description here",
+  image = "/default-og-image.jpg",
+  canonicalURL = Astro.url,
+  keywords = "your, default, keywords",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Counter.dev Analytics -->
+    <script>
+      if (window.location.hostname !== "localhost") {
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://cdn.counter.dev/script.js";
+        script.setAttribute("data-id", "88349f0a-4168-4d4c-aa42-2fb124c744f6");
+        script.setAttribute("data-utcoffset", "1");
+        document.head.appendChild(script);
+      }
+    </script>
+    <!-- End Counter.dev Analytics -->
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
