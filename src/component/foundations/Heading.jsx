@@ -4,7 +4,7 @@ export const Heading = ({ level, children, white = false, className = '', ...pro
   const Tag = `h${level}`;
   const styles = {
     1: 'text-2xl sm:text-5xl tracking-tight font-black  text-zinc-900 font-heading dark:text-zinc-100',
-    2: 'text-2xl sm:text-3xl tracking-tight text-zinc-900 font-heading dark:text-zinc-100',
+    2: 'text-2xl sm:text-3xl tracking-tight font-bold text-zinc-900 font-heading dark:text-zinc-100',
     3: 'text-xl sm:text-2xl tracking-tight text-zinc-900 font-heading dark:text-zinc-100',
     default: 'text-lg sm:text-xl text-zinc-900 font-heading dark:text-zinc-100'
   };

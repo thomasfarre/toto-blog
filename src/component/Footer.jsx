@@ -10,10 +10,10 @@ const Footer = () => {
               <div className="mx-auto max-w-2xl lg:max-w-5xl">
                 <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
                   <div className="flex flex-wrap justify-center gap-x-6 gap-y-1">
-                    <Link href="/A propos" label="A propos" />
+                    <Link href="/A propos" label="A-propos" />
                     <Link href="/Articles" label="Articles" />
                     <Link href="/Projets" label="Projets" />
-                    <Link href="/Contact" label="Contact" />
+                    <Link href="/Outils" label="Outils" />
                   </div>
                   <p className="text-sm text-zinc-400 dark:text-zinc-500">© 2024 Thomas Farre. All rights reserved.</p>
                 </div>
