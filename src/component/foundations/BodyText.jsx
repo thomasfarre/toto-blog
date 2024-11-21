@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
  */
 export const BodyText = ({ variant, children, className = null, whiteText = false, ...props }) => {
   const variantStyle = {
-    headline: `md:text-xl text-lg ${whiteText ? 'text-gray-50' : 'text-gray-800'}`,
-    paragraph: `${whiteText ? 'text-gray-100' : 'text-gray-700'}`,
-    small: `text-sm ${whiteText ? 'text-gray-100' : 'text-gray-700'}`,
-    label: `text-xs uppercase font-semibold ${whiteText ? 'text-gray-200' : 'text-gray-700'} tracking-wider`,
-    formLabel: `text-sm tracking-wider uppercase font-medium ${whiteText ? 'text-gray-200' : 'text-gray-700'}`,
+    headline: `md:text-xl text-lg ${whiteText ? 'text-zinc-50' : 'text-zinc-800'}`,
+    paragraph: `text-base ${whiteText ? 'text-zinc-100' : 'text-zinc-700'} dark:text-zinc-300`,
+    small: `text-sm ${whiteText ? 'text-zinc-100' : 'text-zinc-700'} dark:text-zinc-300`,
+    label: `text-xs uppercase font-semibold ${whiteText ? 'text-zinc-200' : 'text-zinc-700'} tracking-wider dark:text-zinc-300`,
+    formLabel: `text-sm tracking-wider uppercase font-medium ${whiteText ? 'text-zinc-200' : 'text-zinc-700'} dark:text-zinc-300`,
   };
 
   if (variant === 'formLabel') {

@@ -12,7 +12,7 @@ const ButtonVariants = {
     ),
   },
   secondary: {
-    className: 'bg-gray-900 font-semibold shadow text-gray-50 hover:bg-gray-800 focus:ring-gray-900 py-2 px-4',
+    className: 'bg-zinc-900 font-semibold shadow text-zinc-50 hover:bg-zinc-800 focus:ring-zinc-900 py-2 px-4',
     content: ({ label, children }) => (
       <>
         {children}
@@ -21,7 +21,7 @@ const ButtonVariants = {
     ),
   },
   tertiary: {
-    className: 'text-gray-900 font-semibold hover:text-gray-700 py-2 focus:ring-transparent flex items-center',
+    className: 'text-zinc-900 font-semibold hover:text-zinc-700 py-2 focus:ring-transparent flex items-center',
     content: ({ label }) => (
       <>
         {label}
@@ -30,11 +30,11 @@ const ButtonVariants = {
     ),
   },
   icon: {
-    className: 'text-gray-700 hover:text-gray-500 focus:ring-transparent rounded-full p-2',
+    className: 'text-zinc-700 hover:text-zinc-500 focus:ring-transparent rounded-full p-2',
     content: ({ children }) => children,
   },
   leadingIcon: {
-    className: 'text-gray-900 border font-semibold border-gray-900 bg-white rounded-md shadow hover:bg-gray-100 focus:ring-gray-900 py-2 px-4 flex items-center',
+    className: 'text-zinc-900 border font-semibold border-zinc-900 bg-white rounded-md shadow hover:bg-zinc-100 focus:ring-zinc-900 py-2 px-4 flex items-center',
     content: ({ label, children }) => (
       <>
         {children}
