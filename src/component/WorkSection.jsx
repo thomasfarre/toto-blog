@@ -1,6 +1,6 @@
 // src/component/WorkSection.jsx
 import WorkExperience from './WorkExperience';
-const WorkSection = () => {
+const WorkSection = ({ images }) => {
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -22,22 +22,36 @@ const WorkSection = () => {
             className="stroke-zinc-400 dark:stroke-zinc-500"
           ></path>
         </svg>
-        <span className="ml-3">Work</span>
+        <span className="ml-3">Expériences</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {/* Repeat this block for each work experience */}
         <WorkExperience
-          company="Planetaria"
-          role="CEO"
-          startDate="2019"
+          company="Akawaka"
+          role="Développeur Front-End"
+          startDate="2024"
           endDate="Present"
-          logoSrc="/_next/static/media/planetaria.ecd81ade.svg"
+          logoSrc={images[0]}
+        />
+        <WorkExperience
+          company="Sutunam"
+          role="Lead Front-End"
+          startDate="2023"
+          endDate="2024"
+          logoSrc={images[1]}
+        />
+        <WorkExperience
+          company="Sutunam"
+          role="Développeur Front-End"
+          startDate="2021"
+          endDate="2023"
+          logoSrc={images[1]}
         />
         {/* Add more list items as needed */}
       </ol>
       <a
         className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
-        href="#"
+        href="/CV_Thomas_Farre.pdf"
       >
         Download CV
         <svg

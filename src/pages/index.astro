@@ -12,6 +12,9 @@ import headerImage3 from "../assets/montagne.jpg";
 import headerImage4 from "../assets/rando.jpg";
 import headerImage5 from "../assets/vlad-et-moi.jpg";
 
+import workStationImage1 from "../assets/akawaka.png";
+import workStationImage2 from "../assets/sutunam.png";
+
 const optimizedImages = {
   gallery: await Promise.all([
     getImage({ src: headerImage1, format: "webp" }),
@@ -21,6 +24,11 @@ const optimizedImages = {
     getImage({ src: headerImage5, format: "webp" }),
   ]),
 };
+
+const workStationImages = await Promise.all([
+  getImage({ src: workStationImage1, format: "webp" }),
+  getImage({ src: workStationImage2, format: "webp" }),
+]);
 ---
 
 <Layout
@@ -66,7 +74,50 @@ const optimizedImages = {
                 />
               </div>
               <div class="space-y-10 lg:pl-16 xl:pl-24">
-                <WorkSection />
+                <div
+                  class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+                >
+                  <h2
+                    class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      class="h-6 w-6 flex-none"
+                      ><path
+                        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
+                        class="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+                      ></path><path
+                        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
+                        class="stroke-zinc-400 dark:stroke-zinc-500"
+                      ></path></svg
+                    ><span class="ml-3">Contactez-moi</span>
+                  </h2><p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                    Envie d'échanger avec moi ? Je suis toujours ouvert à de
+                    nouvelles idées et discussions. Parlons en !
+                  </p>
+                  <div class="mt-6 flex items-center justify-between">
+                    <a
+                      href="mailto:thomas.farre@gmail.com"
+                      class="text-sm text-zinc-600 dark:text-zinc-400"
+                    >
+                      thomas.farre@gmail.com
+                    </a>
+                    <a href="mailto:thomas.farre@gmail.com">
+                      <button
+                        class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70 ml-4 flex-none"
+                        type="submit"
+                      >
+                        M'écrire
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <WorkSection images={workStationImages} />
               </div>
             </div>
           </div>
