@@ -1,0 +1,53 @@
+---
+import Layout from "../layout/Layout.astro";
+import { Heading } from "../component/foundations/Heading.jsx";
+import BodyText from "../component/foundations/BodyText";
+import ArticlePreview from "../component/ArticlePreview.jsx";
+---
+
+<Layout
+  title="Thomas Farre - À propos"
+  description="À propos de Thomas Farre, développeur web front-end passionné par la création d'interfaces utilisateur intuitives et esthétiques, spécialisé en React, Vue et TailwindCSS"
+  keywords="à propos, développeur front-end, web design, interfaces utilisateur, React, Vue, TailwindCSS, Storybook, design minimaliste"
+  image="/path-to-og-image.jpg"
+>
+  <main class="flex-auto">
+    <div class="sm:px-8 mt-9">
+      <div class="mx-auto w-full max-w-7xl lg:px-8">
+        <div class="relative px-4 sm:px-8 lg:px-12">
+          <div class="max-w-2xl mx-auto lg:max-w-5xl">
+            <header class="max-w-xl space-y-4">
+              <Heading level={1}
+                >Mes réflexions sur le développement, le design, et bien plus.</Heading
+              >
+              <BodyText variant="paragraph">
+                Tous mes articles sur la programmation, le design produit et
+                l’apprentissage, rassemblés par ordre chronologique.
+              </BodyText>
+            </header>
+            <div class="mt-16 sm:mt-20">
+              <div
+                class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
+              >
+                <div class="flex max-w-3xl flex-col space-y-16">
+                  <ArticlePreview
+                    title="Crafting a design system for a multiplanetary future"
+                    href="/articles/crafting-a-design-system-for-a-multiplanetary-future"
+                    date="2022-09-05"
+                    description="Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system."
+                  />
+                  <ArticlePreview
+                    title="Crafting a design system for a multiplanetary future"
+                    href="/articles/crafting-a-design-system-for-a-multiplanetary-future"
+                    date="2022-09-05"
+                    description="Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system."
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

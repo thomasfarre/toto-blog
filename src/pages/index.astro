@@ -1,13 +1,26 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layout/Layout.astro";
 import Header from "../component/Header.jsx";
-import Navigation from "../component/Navigation.jsx";
 import Photos from "../component/Photos.jsx";
 import ArticleCard from "../component/ArticleCard.jsx";
-import Footer from "../component/Footer.jsx";
-import avatar from "../assets/avatar.jpeg";
 import WorkSection from "../component/WorkSection.jsx";
+import { getImage } from "astro:assets";
+
+import headerImage1 from "../assets/madeira.jpg";
+import headerImage2 from "../assets/mer.jpg";
+import headerImage3 from "../assets/montagne.jpg";
+import headerImage4 from "../assets/rando.jpg";
+import headerImage5 from "../assets/vlad-et-moi.jpg";
+
+const optimizedImages = {
+  gallery: await Promise.all([
+    getImage({ src: headerImage1, format: "webp" }),
+    getImage({ src: headerImage2, format: "webp" }),
+    getImage({ src: headerImage3, format: "webp" }),
+    getImage({ src: headerImage4, format: "webp" }),
+    getImage({ src: headerImage5, format: "webp" }),
+  ]),
+};
 ---
 
 <Layout
@@ -16,71 +29,49 @@ import WorkSection from "../component/WorkSection.jsx";
   keywords="développeur front-end, web design, interfaces utilisateur, React, Vue, TailwindCSS, Storybook, design minimaliste"
   image="/path-to-og-image.jpg"
 >
-  <div class="flex w-full">
-    <div class="fixed inset-0 flex justify-center sm:px-8">
-      <div class="flex w-full max-w-7xl lg:px-8">
-        <div
-          class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
-        >
-        </div>
+  <main class="flex-auto">
+    <div class="sm:px-8 mt-9">
+      <div class="mx-auto w-full max-w-7xl lg:px-8">
+        <Header />
       </div>
     </div>
-    <div class="relative flex w-full flex-col">
-      <header class="mx-auto w-full max-w-7xl lg:px-8">
+    <div class="mt-16 sm:mt-20">
+      <Photos images={optimizedImages} />
+    </div>
+    <div class="sm:px-8 mt-24 md:mt-28">
+      <div class="mx-auto w-full max-w-7xl lg:px-8">
         <div class="relative px-4 sm:px-8 lg:px-12">
           <div class="mx-auto max-w-2xl lg:max-w-5xl">
-            <Navigation client:load>
-              <Image src={avatar} alt="avatar" class="w-16 h-16 rounded-full" />
-            </Navigation>
-          </div>
-        </div>
-      </header>
-      <main class="flex-auto">
-        <div class="sm:px-8 mt-9">
-          <div class="mx-auto w-full max-w-7xl lg:px-8">
-            <Header />
-          </div>
-        </div>
-        <div class="mt-16 sm:mt-20">
-          <Photos />
-        </div>
-        <div class="sm:px-8 mt-24 md:mt-28">
-          <div class="mx-auto w-full max-w-7xl lg:px-8">
-            <div class="relative px-4 sm:px-8 lg:px-12">
-              <div class="mx-auto max-w-2xl lg:max-w-5xl">
-                <div
-                  class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
-                >
-                  <div class="flex flex-col gap-16">
-                    <ArticleCard
-                      title="Crafting a design system for a multiplanetary future"
-                      link="/articles/crafting-a-design-system-for-a-multiplanetary-future"
-                      date="2022-09-05"
-                      description="Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system."
-                    />
-                    <ArticleCard
-                      title="Crafting a design system for a multiplanetary future"
-                      link="/articles/crafting-a-design-system-for-a-multiplanetary-future"
-                      date="2022-09-05"
-                      description="Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system."
-                    />
-                    <ArticleCard
-                      title="Crafting a design system for a multiplanetary future"
-                      link="/articles/crafting-a-design-system-for-a-multiplanetary-future"
-                      date="2022-09-05"
-                      description="Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system."
-                    />
-                  </div>
-                  <div class="space-y-10 lg:pl-16 xl:pl-24">
-                    <WorkSection />
-                  </div>
-                </div>
+            <div
+              class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
+            >
+              <div class="flex flex-col gap-16">
+                <ArticleCard
+                  title="Crafting a design system for a multiplanetary future"
+                  link="/articles/crafting-a-design-system-for-a-multiplanetary-future"
+                  date="2022-09-05"
+                  description="Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system."
+                />
+                <ArticleCard
+                  title="Crafting a design system for a multiplanetary future"
+                  link="/articles/crafting-a-design-system-for-a-multiplanetary-future"
+                  date="2022-09-05"
+                  description="Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system."
+                />
+                <ArticleCard
+                  title="Crafting a design system for a multiplanetary future"
+                  link="/articles/crafting-a-design-system-for-a-multiplanetary-future"
+                  date="2022-09-05"
+                  description="Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system."
+                />
+              </div>
+              <div class="space-y-10 lg:pl-16 xl:pl-24">
+                <WorkSection />
               </div>
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
+      </div>
     </div>
-  </div>
+  </main>
 </Layout>

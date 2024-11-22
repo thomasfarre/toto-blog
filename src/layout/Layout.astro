@@ -1,4 +1,10 @@
 ---
+import Footer from "../component/Footer.jsx";
+import Navigation from "../component/Navigation.jsx";
+const currentPath = Astro.url.pathname;
+import { Image } from "astro:assets";
+import avatar from "../assets/avatar.jpeg";
+
 interface Props {
   title?: string;
   description?: string;
@@ -16,7 +22,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <style>
       /* open-sans-regular - latin */
@@ -151,6 +157,32 @@ const {
     <!-- End Counter.dev Analytics -->
   </head>
   <body class="font-body flex h-full bg-zinc-50 dark:bg-zinc-950">
-    <slot />
+    <div class="flex w-full">
+      <div class="fixed inset-0 flex justify-center sm:px-8">
+        <div class="flex w-full max-w-7xl lg:px-8">
+          <div
+            class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
+          >
+          </div>
+        </div>
+      </div>
+      <div class="relative flex w-full flex-col">
+        <header class="mx-auto w-full max-w-7xl lg:px-8">
+          <div class="relative px-4 sm:px-8 lg:px-0">
+            <div class="mx-auto max-w-2xl lg:max-w-5xl">
+              <Navigation currentPath={currentPath} client:load>
+                <Image
+                  src={avatar}
+                  alt="avatar"
+                  class="w-16 h-16 rounded-full"
+                />
+              </Navigation>
+            </div>
+          </div>
+        </header>
+        <slot />
+        <Footer />
+      </div>
+    </div>
   </body>
 </html>

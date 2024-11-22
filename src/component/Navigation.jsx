@@ -69,7 +69,7 @@ function ThemeToggle() {
   );
 }
 
-export default function Navigation({ children }) {
+export default function Navigation({ children, currentPath }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -80,18 +80,18 @@ export default function Navigation({ children }) {
         </div>
         <div className="relative flex items-center gap-6">
           <nav className="hidden md:block ">
-            <ul className="flex items-center gap-8 py-2 px-6 rounded-full bg-zinc-50 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-zinc-800 dark:ring-zinc-50/10">
-              <li>
-                <Link href="/a-propos" label="À propos de moi" />
+            <ul className="flex items-center gap-8 px-6 rounded-full bg-zinc-50 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-zinc-800 dark:ring-zinc-50/10">
+              <li className="group relative">
+                <Link variant="navigation" href="/a-propos" label="À propos de moi" isActive={currentPath === '/a-propos'} />
               </li>
               <li>
-                <Link href="/Articles" label="Articles" />
+                <Link variant="navigation" href="/articles" label="Articles" isActive={currentPath === '/articles'} />
               </li>
               <li>
-                <Link href="/Projets" label="Projets" />
+                <Link variant="navigation" href="/projets" label="Projets" isActive={currentPath === '/projets'} />
               </li>
               <li>
-                <Link href="/Outils" label="Outils" />
+                <Link variant="navigation" href="/outils" label="Outils" isActive={currentPath === '/outils'} />
               </li>
             </ul>
           </nav>
@@ -163,29 +163,29 @@ export default function Navigation({ children }) {
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <li className="py-2">
                   <Link
-                    href="/A propos"
-                    label="A propos"
+                    href="/a-propos"
+                    label="À propos de moi"
                     onClick={() => setIsMenuOpen(false)}
                   />
                 </li>
                 <li className="py-2">
                   <Link
-                    href="/Articles"
+                    href="/articles"
                     label="Articles"
                     onClick={() => setIsMenuOpen(false)}
                   />
                 </li>
                 <li className="py-2">
                   <Link
-                    href="/Projets"
+                    href="/projets"
                     label="Projets"
                     onClick={() => setIsMenuOpen(false)}
                   />
                 </li>
                 <li className="py-2">
                   <Link
-                    href="/Contact"
-                    label="Contact"
+                    href="/outils"
+                    label="Outils"
                     onClick={() => setIsMenuOpen(false)}
                   />
                 </li>

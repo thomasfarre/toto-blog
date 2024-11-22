@@ -1,0 +1,55 @@
+---
+import Layout from "../layout/Layout.astro";
+import { Heading } from "../component/foundations/Heading.jsx";
+import BodyText from "../component/foundations/BodyText";
+import WorkstationSection from "../component/WorkstationSection.jsx";
+
+const workstationItems = [
+  {
+    name: "16” MacBook Pro, M1 Max, 64GB RAM (2021)",
+    description:
+      "I was using an Intel-based 16” MacBook Pro prior to this and the difference is night and day. I’ve never heard the fans turn on a single time, even under the incredibly heavy loads I put it through with our various launch simulations.",
+  },
+  {
+    name: "Apple Magic Trackpad",
+    description:
+      "Something about all the gestures makes me feel like a wizard with special powers. I really like feeling like a wizard with special powers.",
+  },
+];
+---
+
+<Layout
+  title="Thomas Farre - À propos"
+  description="À propos de Thomas Farre, développeur web front-end passionné par la création d'interfaces utilisateur intuitives et esthétiques, spécialisé en React, Vue et TailwindCSS"
+  keywords="à propos, développeur front-end, web design, interfaces utilisateur, React, Vue, TailwindCSS, Storybook, design minimaliste"
+  image="/path-to-og-image.jpg"
+>
+  <main class="flex-auto">
+    <div class="sm:px-8 mt-9">
+      <div class="mx-auto w-full max-w-7xl lg:px-8">
+        <div class="relative px-4 sm:px-8 lg:px-12">
+          <div class="max-w-2xl mx-auto lg:max-w-5xl">
+            <header class="max-w-xl space-y-4">
+              <Heading level={1}>Les outils que j’utilise au quotidien</Heading>
+              <BodyText variant="paragraph">
+                Voici une liste des outils que j’utilise pour le développement,
+                le design, et plus encore. Ce sont ceux qui m’aident à créer,
+                apprendre et travailler efficacement. Si vous avez des
+                recommandations, je suis toujours curieux de découvrir de
+                nouvelles choses !
+              </BodyText>
+            </header>
+            <div class="mt-16 sm:mt-20">
+              <div class="space-y-20">
+                <WorkstationSection
+                  title="Workstation"
+                  items={workstationItems}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
