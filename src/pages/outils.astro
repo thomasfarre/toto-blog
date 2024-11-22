@@ -6,14 +6,96 @@ import WorkstationSection from "../component/WorkstationSection.jsx";
 
 const workstationItems = [
   {
-    name: "16” MacBook Pro, M1 Max, 64GB RAM (2021)",
+    name: "Workspace Matrix",
     description:
-      "I was using an Intel-based 16” MacBook Pro prior to this and the difference is night and day. I’ve never heard the fans turn on a single time, even under the incredibly heavy loads I put it through with our various launch simulations.",
+      "J’adore cet outil, car il me permet d’organiser mes bureaux virtuels en grille, par exemple avec 4 espaces. Quand je travaille sans écran externe sur mon PC portable, c’est super pratique pour garder tout organisé et naviguer rapidement entre mes tâches.",
   },
   {
-    name: "Apple Magic Trackpad",
+    name: "Zsh avec Oh My Zsh et syntax highlighting",
     description:
-      "Something about all the gestures makes me feel like a wizard with special powers. I really like feeling like a wizard with special powers.",
+      "Zsh est mon shell préféré, et avec Oh My Zsh et le plugin de syntax highlighting, c’est encore mieux. J’adore la manière dont il met en couleur les commandes au fur et à mesure, ça rend tout plus clair et évite les erreurs bêtes. C’est un petit détail, mais ça change complètement mon expérience dans le terminal..",
+  },
+];
+const developmentItems = [
+  {
+    name: "Cursor",
+    description:
+      "Cursor est un éditeur de code qui me permet de coder plus vite et plus efficacement. Je conseille vraiment de tester !",
+  },
+  {
+    name: "TailwindCSS",
+    description:
+      "TailwindCSS est un framework CSS qui me permet de créer des interfaces utilisateur esthétiques et performantes. J'en suis un grand fan !",
+  },
+  {
+    name: "Astro",
+    description:
+      "Astro.js est pour moi le framework ultime : il combine simplicité et polyvalence, en permettant de faire du SSR, du SSG ou des SPA là où vous en avez besoin, le tout sans effort. Une vraie alternative à Next.js et Nuxt.js.",
+  },
+  {
+    name: "React",
+    description:
+      "React est un outil incroyablement polyvalent, mais ce que j’aime le plus, c’est son approche modulaire. Elle s’intègre parfaitement avec TailwindCSS, donnant un vrai sens à la création de composants réutilisables et élégants.",
+  },
+  {
+    name: "Vue.js",
+    description:
+      "Vue.js est un framework intuitif et flexible que j’apprécie particulièrement pour sa simplicité et sa puissance. Sa syntaxe claire et sa réactivité naturelle en font un choix idéal pour des projets modulaires et dynamiques",
+  },
+  {
+    name: "Storybook",
+    description:
+      "Storybook est un outil que j’utilise pour construire mes projets directement, en développant et testant chaque composant de manière isolée. Il permet de structurer efficacement un projet tout en gardant un contrôle précis sur chaque élément.",
+  },
+  {
+    name: "Supabase",
+    description:
+      "Supabase est ma solution de choix pour mes petits projets nécessitant une base de données. Simple à configurer, puissante et intuitive, elle me permet de gérer facilement l’authentification et les données en temps réel.",
+  },
+  {
+    name: "Netlify",
+    description:
+      "Netlify est mon outil préféré pour déployer rapidement et facilement mes sites statiques. Il offre une intégration fluide avec mes workflows et garantit des performances optimales sans effort.",
+  },
+];
+const designItems = [
+  {
+    name: "Figma",
+    description:
+      "Figma est mon outil de prédilection pour concevoir et prototyper mes interfaces. Collaboratif, intuitif et puissant, il me permet de donner vie à mes idées et de créer des designs clairs et fonctionnels.",
+  },
+  {
+    name: "Heroicons",
+    description:
+      "Heroicons est ma ressource préférée pour des icônes simples, modernes et faciles à intégrer. Leur style épuré s’adapte parfaitement aux designs minimalistes et fonctionnels que j’apprécie.",
+  },
+  {
+    name: "HeroPatterns",
+    description:
+      "HeroPatterns est un site qui propose des motifs de fond en CSS, idéal pour ajouter un peu de vie à mes designs. Je l’utilise souvent pour donner un peu de personnalité à mes projets.",
+  },
+  {
+    name: "TailwindUI",
+    description:
+      "TailwindUI est un site qui propose des composants prêts à l’emploi, en utilisant TailwindCSS. Je l’utilise souvent pour gagner du temps et pour des éléments qui nécessitent une attention particulière.",
+  },
+  {
+    name: "Duotone",
+    description:
+      "Duotone by ShapeFactory : Cet outil en ligne vous permet de créer des images duotone en quelques secondes. Vous pouvez utiliser leurs images ou télécharger les vôtres, puis appliquer un effet duotone personnalisé.",
+  },
+];
+
+const inspirationItems = [
+  {
+    name: "SiteInspire",
+    description:
+      "SiteInspire est un site qui propose des idées de design, de couleurs, de typographie, etc. C’est un excellent moyen de trouver des inspirations et de s’évader des idées habituelles.",
+  },
+  {
+    name: "LandBook",
+    description:
+      "LandBook est un site qui propose des idées de landing page, de design, de couleurs, de typographie, etc. C’est un excellent moyen de trouver des inspirations et de s’évader des idées habituelles.",
   },
 ];
 ---
@@ -42,8 +124,17 @@ const workstationItems = [
             <div class="mt-16 sm:mt-20">
               <div class="space-y-20">
                 <WorkstationSection
-                  title="Workstation"
+                  title="Workspace"
                   items={workstationItems}
+                />
+                <WorkstationSection
+                  title="Développement"
+                  items={developmentItems}
+                />
+                <WorkstationSection title="Design" items={designItems} />
+                <WorkstationSection
+                  title="Inspiration"
+                  items={inspirationItems}
                 />
               </div>
             </div>

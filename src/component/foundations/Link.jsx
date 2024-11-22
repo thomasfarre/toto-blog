@@ -2,12 +2,12 @@ import PropTypes from "prop-types";
 
 const LinkVariants = {
   default: {
-    className: "transition  px-3 py-2  duration-300 md:text-sm ease-out focus:outline-none font-medium text-zinc-800 hover:text-emerald-500 dark:text-zinc-200 dark:hover:text-emerald-400",
+    className: "transition  px-3 py-2  duration-300 text-sm ease-out focus:outline-none font-medium text-zinc-800 hover:text-emerald-500 dark:text-zinc-200 dark:hover:text-emerald-400",
     content: ({ label }) => label,
   },
   navigation: {
     className: ({ isActive }) =>
-      `group block relative px-3 py-2 transition duration-300 md:text-sm ease-out focus:outline-none font-medium ${
+      `group block relative px-3 py-2 transition duration-300 text-sm ease-out focus:outline-none font-medium ${
         isActive ? "text-teal-500 dark:text-teal-400" : "text-zinc-800 dark:text-zinc-200"
       } hover:text-emerald-500 dark:hover:text-emerald-400`,
     content: ({ label, isActive }) => (

@@ -26,9 +26,10 @@ const ProjectCard = ({
         <span className="relative z-10">{projectName}</span>
       </a>
     </h2>
-    <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-      {projectDescription}
-    </p>
+    <p
+      dangerouslySetInnerHTML={{ __html: projectDescription }}
+      className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"
+    />
     <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 flex-none">
         <path
