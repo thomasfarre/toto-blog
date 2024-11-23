@@ -22,38 +22,38 @@ const projects = [
   {
     imgSrc: optimizedImages.gallery[1].src,
     imgAlt: "Academie Stephanoise Logo",
-    projectLink: "https://academie-stephanoise.netlify.app/",
     projectName: "Academie Stephanoise",
     projectDescription:
       "Le site web d’une salle de sport de combat propose un calendrier interactif pour les cours, un système d’inscription simple, et un blog. Construit avec <strong>React</strong>, <strong>TailwindCSS</strong>, et <strong>Astro</strong>, il est rapide, performant et facile à naviguer.",
     projectWebsite: "https://academie-stephanoise.netlify.app/",
+    githubLink: "https://github.com/thomasfarre/academie-stephanoise",
   },
   {
     imgSrc: optimizedImages.gallery[2].src,
     imgAlt: "AkaQuiz Logo",
-    projectLink: "ttps://akaquiz.netlify.app/",
     projectName: "AkaQuiz",
     projectDescription:
-    "Akaquiz est un jeu simple où vous devez trouver les mots correspondant aux définitions affichées. Construit avec <strong>React</strong>, <strong>Supabase</strong> et <strong>TailwindCSS</strong>, il repose sur un design system. Défiez-vous et grimpez dans le classement !",
+      "Akaquiz est un jeu simple où vous devez trouver les mots correspondant aux définitions affichées. Construit avec <strong>React</strong>, <strong>Supabase</strong> et <strong>TailwindCSS</strong>, il repose sur un design system. Défiez-vous et grimpez dans le classement !",
     projectWebsite: "https://akaquiz.netlify.app/",
+    githubLink: "https://github.com/akawaka/AkaQuiz",
   },
   {
     imgSrc: optimizedImages.gallery[0].src,
     imgAlt: "Otter Words Logo",
-    projectLink: "https://otter-words.netlify.app/",
     projectName: "Otter Words",
     projectDescription:
       "Otter Words est un jeu multijoueur où vous trouvez des mots à partir de définitions, mêlant scrabble et synonymes. Conçu avec <strong>Vue.js</strong>, <strong>TailwindCSS</strong>, l’API de <strong>Twitch</strong>, et <strong>Firebase</strong>, il engage les joueurs en solo ou sur Twitch.",
     projectWebsite: "https://otter-words.netlify.app/",
+    githubLink: "https://github.com/thomasfarre/otter-words",
   },
   {
     imgSrc: optimizedImages.gallery[3].src,
     imgAlt: "6 Sens Logo",
-    projectLink: "https://thomasfarre.github.io/ristorante/",
     projectName: "6 Sens",
     projectDescription:
       "Le site du restaurant 6ème Sens met en lumière ce lieu provençal avec élégance et simplicité. Construit en <strong>HTML</strong> avec <strong>TailwindCSS</strong> et <strong>AlpineJS</strong>, il offre une présentation claire du restaurant et de son ambiance chaleureuse. Hébergé sur GitHub Pages, il garantit rapidité et performance.",
     projectWebsite: "https://thomasfarre.github.io/ristorante/",
+    githubLink: "https://github.com/thomasfarre/ristorante",
   },
   // Add more project objects as needed
 ];
@@ -84,7 +84,7 @@ const projects = [
             <div class="mt-16 sm:mt-20">
               <ul
                 role="list"
-                class="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+                class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
               >
                 {projects.map((project) => <ProjectCard {...project} />)}
               </ul>

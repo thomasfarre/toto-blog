@@ -1,0 +1,158 @@
+---
+import Layout from "../../layout/Layout.astro";
+import { Heading } from "../../component/foundations/Heading.jsx";
+import BodyText from "../../component/foundations/BodyText";
+---
+
+<Layout
+  title="Thomas Farre - Ma découverte de TailwindCSS"
+  description="Découvrez comment j’ai découvert TailwindCSS et pourquoi ce framework a révolutionné ma façon de concevoir des interfaces. Entre rapidité, modularité et simplicité, je partage mon expérience, ses atouts, et les erreurs à éviter."
+  keywords="tailwindcss, découverte, interfaces utilisateur, React, Vue, TailwindCSS, Storybook, design minimaliste"
+  image="/path-to-og-image.jpg"
+>
+  <main class="flex-auto">
+    <div class="sm:px-8 mt-9">
+      <div class="mx-auto w-full max-w-7xl lg:px-8">
+        <div class="relative px-4 sm:px-8 lg:px-12">
+          <article class="max-w-2xl mx-auto lg:max-w-5xl">
+            <header class="max-w-xl space-y-4">
+              <Heading level={1}
+                >Ma découverte de TailwindCSS : pourquoi il a tout changé pour
+                moi</Heading
+              >
+              <BodyText variant="paragraph">
+                Découvrez comment TailwindCSS m’a fait aimer le front-end et
+                pourquoi c’est devenu un incontournable pour moi.
+              </BodyText>
+            </header>
+            <div class="mt-16 sm:mt-20">
+              <div class="prose prose-zinc dark:prose-invert">
+                <section>
+                  <h2>De zéro intérêt pour le front-end à un déclic</h2>
+                  <BodyText variant="paragraph">
+                    Lorsque j’ai commencé le développement web, c’était dans le
+                    cadre d’un <strong>Bootcamp intensif</strong>. À la base, je
+                    n’avais aucun sens artistique et je pensais me diriger vers
+                    le back-end. La formation front-end, et surtout le CSS, ne
+                    m’a pas du tout plu au départ. Je trouvais ça abstrait,
+                    répétitif et peu gratifiant.
+                  </BodyText>
+                  <BodyText variant="paragraph">
+                    Mais tout a changé lorsqu’on a dû travailler sur un projet
+                    de groupe. J’étais avec deux coéquipiers bien meilleurs que
+                    moi en back-end, et on avait besoin de quelqu’un pour
+                    s’occuper du front. Sur les conseils de mon professeur, j’ai
+                    essayé <strong>TailwindCSS</strong>… et là, j’ai eu un
+                    déclic.
+                  </BodyText>
+                </section>
+
+                <section>
+                  <h2>Une approche qui a transformé ma vision du front-end</h2>
+                  <BodyText variant="paragraph">
+                    Avec Tailwind, j’ai tout de suite eu l’impression de
+                    <strong>jouer avec des légos</strong
+                    >. Chaque classe utilitaire était comme une petite brique
+                    que je pouvais empiler pour construire progressivement une
+                    interface. Ce qui m’a marqué :
+                  </BodyText>
+                  <ul>
+                    <li>
+                      <strong>La prise en main est intuitive</strong> : pas
+                      besoin d’écrire des feuilles de style interminables ou de
+                      me battre avec des règles CSS incompréhensibles.
+                    </li>
+                    <li>
+                      <strong>La liberté de création est énorme</strong> : tout
+                      est possible, mais sans être figé comme avec un framework
+                      comme Bootstrap.
+                    </li>
+                    <li>
+                      <strong>J’étais toujours dans le contexte du HTML</strong
+                      >, sans avoir à jongler entre différents fichiers pour
+                      voir mes changements en direct.
+                    </li>
+                  </ul>
+                  <BodyText variant="paragraph">
+                    En très peu de temps, j’ai pu reproduire des pages web
+                    classiques, et surtout, comprendre comment tout cela
+                    fonctionnait. Avec Tailwind, le CSS ne semblait plus être un
+                    obstacle, mais un outil que je pouvais vraiment maîtriser.
+                  </BodyText>
+                </section>
+
+                <section>
+                  <h2>Pourquoi Tailwind simplifie vraiment la vie</h2>
+                  <BodyText variant="paragraph">
+                    Un des plus grands avantages de Tailwind est de <strong
+                      >supprimer le fardeau mental lié au CSS traditionnel</strong
+                    >. Avec les classes utilitaires :
+                  </BodyText>
+                  <ul>
+                    <li>
+                      <strong
+                        >Pas de séparation des préoccupations maladroite</strong
+                      > : tout est dans le HTML, ce qui évite d’écrire des
+                      règles CSS dans le vide ou de les tester à l’aveugle.
+                    </li>
+                    <li>
+                      <strong>Moins de réécriture inutile</strong> : au lieu
+                      d’empiler des styles jusqu’à ce que ça marche, les classes
+                      Tailwind sont précises et prévisibles.
+                    </li>
+                    <li>
+                      <strong>Une productivité décuplée</strong> : en quelques
+                      minutes, je pouvais voir mes idées prendre forme
+                      directement dans le navigateur.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h2>Au-delà de l’outil : comprendre ses fondations</h2>
+                  <BodyText variant="paragraph">
+                    En cherchant à tirer le meilleur parti de Tailwind, je me
+                    suis intéressé aux problèmes qu’il résout. J’ai lu des
+                    articles sur ses <strong>gains de performance</strong>, son
+                    rôle dans l’<strong>organisation des projets</strong>, et sa
+                    compatibilité avec des concepts comme l’<strong
+                      >atomic design</strong
+                    >.
+                  </BodyText>
+                  <BodyText variant="paragraph">
+                    Un article en particulier, <a
+                      href="https://frontstuff.io/no-utility-classes-arent-the-same-as-inline-styles"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >No, Utility Classes Aren’t the Same as Inline Styles</a
+                    >, m’a aidé à mieux comprendre l’approche de Tailwind.
+                    L’idée que les classes utilitaires ne sont pas juste des
+                    raccourcis, mais une méthode pour structurer son CSS de
+                    manière modulaire et maintenable, a transformé ma façon de
+                    travailler.
+                  </BodyText>
+                </section>
+
+                <section>
+                  <h2>Un outil incontournable</h2>
+                  <BodyText variant="paragraph">
+                    Aujourd’hui, TailwindCSS est, pour moi, un incontournable
+                    dans le monde du CSS. Il m’a permis de prendre goût au
+                    front-end, de devenir plus efficace, et d’apprécier la
+                    création d’interfaces.
+                  </BodyText>
+                  <BodyText variant="paragraph">
+                    Si vous ne l’avez pas encore essayé, je vous encourage
+                    vivement à le tester. Ce framework n’est pas seulement un
+                    outil pratique : il peut changer votre façon de concevoir et
+                    d’aborder le développement front-end.
+                  </BodyText>
+                </section>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

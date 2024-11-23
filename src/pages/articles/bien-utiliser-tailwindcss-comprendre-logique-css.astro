@@ -1,0 +1,234 @@
+---
+import Layout from "../../layout/Layout.astro";
+import { Heading } from "../../component/foundations/Heading.jsx";
+import BodyText from "../../component/foundations/BodyText";
+---
+
+<Layout
+  title="Thomas Farre - Bien utiliser TailwindCSS : comprendre la logique CSS derrière les classes"
+  description="Apprenez à tirer le meilleur parti de TailwindCSS en comprenant la logique CSS derrière ses classes. Bonnes pratiques, pièges à éviter et astuces pour un code maintenable."
+  keywords="tailwindcss, logique css, classes utilitaires, interfaces utilisateur, React, Vue, TailwindCSS"
+  image="/path-to-og-image.jpg"
+>
+  <main class="flex-auto">
+    <div class="sm:px-8 mt-9">
+      <div class="mx-auto w-full max-w-7xl lg:px-8">
+        <div class="relative px-4 sm:px-8 lg:px-12">
+          <article class="max-w-2xl mx-auto lg:max-w-5xl">
+            <header class="max-w-xl space-y-4">
+              <Heading level={1}>
+                Bien utiliser TailwindCSS : comprendre la logique CSS derrière
+                les classes
+              </Heading>
+              <BodyText variant="paragraph">
+                <strong>TailwindCSS</strong>, c’est comme une boîte à outils qui
+                vous permet de construire rapidement des interfaces élégantes et
+                modernes. Mais utilisé de travers, il peut devenir un véritable
+                cauchemar de maintenabilité. La clé pour en tirer le meilleur ?
+                Comprendre les principes CSS qui le sous-tendent et savoir où
+                poser des limites. Dans cet article, on décortique la
+                philosophie de Tailwind, les bonnes pratiques et les erreurs à
+                éviter pour éviter que votre projet ne devienne un gros tas de
+                classes incompréhensibles.
+              </BodyText>
+            </header>
+            <div class="mt-16 sm:mt-20">
+              <div class="prose prose-zinc dark:prose-invert">
+                <section>
+                  <Heading level={2}>
+                    TailwindCSS n'est pas du CSS inline
+                  </Heading>
+                  <BodyText variant="paragraph">
+                    Première chose à éclaircir : utiliser des classes
+                    utilitaires comme <code>{`bg-red-500`}</code> ou
+                    <code>{`text-center`}</code>, ce n’est pas du style inline.
+                    Là où les styles inline (ex.
+                    <code>{`style="color: red;"`}</code>) encapsulent
+                    directement des propriétés CSS dans le HTML,
+                    <strong
+                      >les classes utilitaires sont des abstractions CSS
+                      minimales, réutilisables et maintenables</strong
+                    >.
+                  </BodyText>
+                  <BodyText variant="paragraph">
+                    Dans <a
+                      href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/"
+                      target="_blank">cet article d’Adam Wathan</a
+                    >, le créateur de Tailwind explique que les classes
+                    utilitaires brisent le mythe selon lequel tout style doit
+                    être découplé dans des fichiers CSS séparés. À la place, on
+                    co-localise les styles avec les composants qu’ils
+                    concernent. Résultat : une meilleure lisibilité et une
+                    flexibilité accrue.
+                  </BodyText>
+
+                  <h3>Pourquoi c'est différent ?</h3>
+                  <ul>
+                    <li>
+                      <strong>Pas de cascade à gérer</strong> : chaque classe utilitaire
+                      correspond à une propriété CSS isolée.
+                    </li>
+                    <li>
+                      <strong>Moins de règles CSS globales</strong> : les styles
+                      ne "débordent" pas d’un composant à l’autre.
+                    </li>
+                    <li>
+                      <strong>Un workflow plus rapide</strong> : tout est au même
+                      endroit, vous passez moins de temps à chasser des sélecteurs
+                      dans plusieurs fichiers.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h2>Comprendre les bases CSS derrière Tailwind</h2>
+                  <p>
+                    Pour bien utiliser Tailwind, il faut connaître les
+                    fondamentaux CSS qu’il encapsule. Voici trois concepts clés
+                    à garder en tête.
+                  </p>
+
+                  <h3>1. La granularité des classes utilitaires</h3>
+                  <p>
+                    Les classes utilitaires de Tailwind se basent sur une
+                    approche "atomique" : chaque classe ne fait qu’une chose,
+                    mais elle le fait bien. Cela vous permet de composer des
+                    styles complexes en combinant ces classes.
+                  </p>
+                  <pre><code>{`<div class="p-4 bg-gray-100 rounded-lg shadow-md">
+  <p class="text-lg text-gray-700">Hello, Tailwind !</p>
+</div>`}
+    </code></pre>
+
+                  <h3>2. Le pouvoir des pseudo-classes</h3>
+                  <p>
+                    Tailwind simplifie des concepts comme les états (<code
+                      >{`:hover`}</code
+                    >, <code>{`:focus`}</code>, <code>{`:disabled`}</code>) avec
+                    des préfixes intuitifs. Vous pouvez styliser les
+                    interactions directement dans votre HTML.
+                  </p>
+                  <pre><code>{`<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Cliquez-moi
+</button>`}
+    </code></pre>
+
+                  <h3>3. Flexbox et Grid simplifiés</h3>
+                  <p>
+                    Tailwind expose les systèmes de mise en page modernes comme
+                    Flexbox et Grid via des classes intuitives, sans avoir à
+                    vous souvenir de propriétés CSS complexes.
+                  </p>
+                  <pre><code>{`<div class="grid grid-cols-3 gap-4">
+  <div class="bg-gray-200 p-4">1</div>
+  <div class="bg-gray-200 p-4">2</div>
+  <div class="bg-gray-200 p-4">3</div>
+</div>`}
+    </code></pre>
+                </section>
+
+                <section>
+                  <h2>Évitez les mauvaises pratiques avec Tailwind</h2>
+
+                  <h3>1. Ne tombez pas dans le piège de @apply</h3>
+                  <p>
+                    La directive <code>{`@apply`}</code> peut sembler magique : elle
+                    permet de regrouper des classes utilitaires dans un fichier CSS,
+                    ce qui allège visuellement votre HTML. Mais attention, <strong
+                      >l’abstraction prématurée est une ennemie sournoise</strong
+                    >.
+                  </p>
+                  <h4>Problèmes avec un usage abusif de @apply :</h4>
+                  <ul>
+                    <li>
+                      <strong>Vous recréez du CSS classique</strong> : Cela vous
+                      oblige à nommer chaque style, ce qui ralentit votre workflow.
+                    </li>
+                    <li>
+                      <strong>Changements plus compliqués</strong> : Modifier un
+                      style global devient risqué, car il peut impacter des zones
+                      inattendues de votre site.
+                    </li>
+                    <li>
+                      <strong>Bundle CSS gonflé</strong> : Chaque règle que vous
+                      ajoutez est du CSS supplémentaire à charger.
+                    </li>
+                  </ul>
+                  <p>
+                    <strong>Bonnes pratiques :</strong> Utilisez <code
+                      >{`@apply`}</code
+                    > uniquement pour des éléments hautement réutilisables comme
+                    des boutons ou des styles de formulaires, et seulement si vous
+                    ne pouvez pas utiliser un framework comme React pour gérer ces
+                    composants.
+                  </p>
+
+                  <h3>
+                    2. Ne confondez pas Tailwind avec une excuse pour mal
+                    structurer
+                  </h3>
+                  <p>
+                    Un des dangers de Tailwind, c’est qu’il peut encourager des
+                    pratiques désordonnées si vous n’êtes pas vigilant. Par
+                    exemple : ajouter des classes inutiles ou redondantes (<code
+                      >{`p-4`}</code
+                    > + <code>{`p-2`}</code>, pourquoi ?), ou ignorer
+                    l’accessibilité et la sémantique.
+                  </p>
+
+                  <h3>3. Tirez parti du fichier de configuration</h3>
+                  <p>
+                    Tailwind permet de personnaliser votre design system dans le
+                    fichier <code>{`tailwind.config.js`}</code>. Ne passez pas à
+                    côté : adaptez les couleurs, espacements et typographies à
+                    votre projet pour éviter la répétition et améliorer la
+                    cohérence.
+                  </p>
+                  <pre><code>{`module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          DEFAULT: '#1DA1F2',
+          dark: '#0A95DD',
+        },
+      },
+    },
+  },
+};`}
+    </code></pre>
+                </section>
+
+                <section>
+                  <h2>Conclusion : Construire avec Tailwind, pas contre lui</h2>
+                  <p>
+                    TailwindCSS est un outil qui accélère le développement et
+                    offre une flexibilité redoutable. Mais il exige de la
+                    discipline. Ne tombez pas dans le piège de vouloir trop
+                    abstraire ou d’essayer de "nettoyer" votre HTML au détriment
+                    des avantages que Tailwind propose.
+                  </p>
+                  <p>
+                    Le vrai pouvoir de Tailwind, c’est dans sa simplicité. Les
+                    classes utilitaires peuvent sembler désordonnées, mais elles
+                    réduisent la complexité du CSS traditionnel, améliorent la
+                    maintenabilité et permettent de garder vos styles proches
+                    des composants qu’ils concernent.
+                  </p>
+                  <p>
+                    <strong>Restez pragmatique</strong> : n’utilisez pas Tailwind
+                    pour forcer un style "propre". Utilisez-le pour construire des
+                    interfaces efficaces, évolutives et cohérentes. Et surtout, souvenez-vous
+                    que la vraie propreté, c’est dans le code qui marche bien et
+                    qui est facile à faire évoluer. Pas dans la chasse aux classes
+                    "trop nombreuses". 😉
+                  </p>
+                </section>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main></Layout
+>
