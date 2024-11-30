@@ -18,10 +18,10 @@ const WorkExperience = ({ company, role, startDate, endDate, logoSrc }) => {
           {company}
         </dd>
         <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-zinc-500 dark:text-zinc-400">{role}</dd>
+        <dd className="text-xs text-zinc-600 dark:text-zinc-400">{role}</dd>
         <dt className="sr-only">Date</dt>
         <dd
-          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+          className="ml-auto text-xs text-zinc-500 dark:text-zinc-400"
           aria-label={`${startDate} until ${endDate}`}
         >
           <time dateTime={startDate}>{startDate}</time>

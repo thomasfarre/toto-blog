@@ -1,6 +1,4 @@
 // src/components/ArticleCard.jsx
-import React from 'react';
-
 const ArticleCard = ({ title, link, date, description }) => {
   return (
     <article className="group relative flex flex-col items-start">
@@ -27,7 +25,7 @@ const ArticleCard = ({ title, link, date, description }) => {
         aria-hidden="true"
         className="relative z-10 mt-4 flex items-center text-sm font-medium text-emerald-500"
       >
-        Read article
+        Lire l'article
         <svg
           viewBox="0 0 16 16"
           fill="none"

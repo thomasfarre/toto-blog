@@ -8,7 +8,7 @@ const LinkVariants = {
   navigation: {
     className: ({ isActive }) =>
       `group block relative px-3 py-2 transition duration-300 text-sm ease-out focus:outline-none font-medium ${
-        isActive ? "text-teal-500 dark:text-teal-400" : "text-zinc-800 dark:text-zinc-200"
+        isActive ? "text-emerald-500 dark:text-emerald-400" : "text-zinc-800 dark:text-zinc-200"
       } hover:text-emerald-500 dark:hover:text-emerald-400`,
     content: ({ label, isActive }) => (
       <>
@@ -16,7 +16,7 @@ const LinkVariants = {
         <span
           className={`${
             isActive ? "block" : "hidden"
-          } group-hover:block absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0`}
+          } group-hover:block absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-emerald-500/0 via-emerald-500/40 to-emerald-500/0 dark:from-emerald-400/0 dark:via-emerald-400/40 dark:to-emerald-400/0`}
         ></span>
       </>
     ),

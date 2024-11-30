@@ -15,7 +15,7 @@ const Footer = () => {
                     <Link href="/projets" label="Projets" />
                     <Link href="/outils" label="Outils" />
                   </div>
-                  <p className="text-sm text-zinc-400 dark:text-zinc-500">© 2024 Thomas Farre. All rights reserved.</p>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400">© 2024 Thomas Farre. All rights reserved.</p>
                 </div>
               </div>
             </div>
